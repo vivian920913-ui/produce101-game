@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PRODUCE 101：女團出道計畫</title>
+<style>
+:root{--ink:#282538;--muted:#77758a;--pink:#ef7cae;--pink2:#fff0f6;--purple:#8273d8;--line:#ece9f2;--paper:#fff;--bg:#f7f6fb;--green:#32866c;--gold:#c28c2c;--shadow:0 12px 35px rgba(52,39,85,.07)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,"Noto Sans TC","Microsoft JhengHei",sans-serif;line-height:1.55}
+button,input,select{font:inherit}button{cursor:pointer;border:0;border-radius:12px;padding:11px 16px;font-weight:750;transition:.15s}button:hover{transform:translateY(-1px);filter:brightness(.98)}button:disabled{opacity:.4;cursor:not-allowed;transform:none}
+.primary{background:linear-gradient(135deg,var(--pink),#d66da7);color:white;box-shadow:0 7px 16px #ef7cae35}.secondary{background:#f2effa;color:#51466f}.ghost{background:white;border:1px solid var(--line);color:var(--ink)}.danger{background:#fff0f0;color:#b94b5a}
+header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}.top{max-width:1200px;margin:auto;padding:14px 22px;display:flex;justify-content:space-between;align-items:center;gap:16px}.brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.02em}.brandmark{width:38px;height:38px;border-radius:13px;background:linear-gradient(135deg,#f59ac1,#8b7be2);display:grid;place-items:center;color:#fff;font-size:18px}.topmeta{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.pill{font-size:12px;background:#f5f2fa;color:#625b79;padding:6px 10px;border-radius:999px;font-weight:800}
+main{max-width:1200px;margin:26px auto;padding:0 22px 60px}.hero{padding:28px;border-radius:24px;background:linear-gradient(120deg,#fff 0%,#fff3f8 60%,#f0edff 100%);border:1px solid #f0e9f3;display:flex;justify-content:space-between;align-items:center;gap:24px;margin-bottom:22px}.eyebrow{color:#b65e8d;font-size:12px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.hero h1{font-size:clamp(25px,4vw,40px);line-height:1.18;margin:8px 0 10px}.hero p{margin:0;color:var(--muted);max-width:650px}.hero-stamp{width:100px;height:100px;flex:0 0 100px;border-radius:50%;display:grid;place-items:center;background:#fff;border:1px solid #f4d8e6;box-shadow:var(--shadow);color:#d66da7;font-weight:950;text-align:center;line-height:1.2}
+.grid{display:grid;grid-template-columns:290px minmax(0,1fr);gap:20px;align-items:start}.panel{background:var(--paper);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);overflow:hidden}.panel-head{padding:18px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:12px}.panel-head h2,.panel-head h3{font-size:16px;margin:0}.panel-body{padding:20px}.profile-top{display:flex;gap:13px;align-items:center}.avatar{width:64px;height:64px;border-radius:20px;background:linear-gradient(145deg,#f8c5dc,#d9d2fb);display:grid;place-items:center;font-size:27px;flex:0 0 auto}.muted{color:var(--muted)}.small{font-size:12px}.statgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}.stat{background:#faf9fc;border:1px solid #f0edf5;border-radius:13px;padding:11px}.stat label{display:block;color:var(--muted);font-size:11px}.stat strong{font-size:20px}.bar{height:6px;background:#eeeaf4;border-radius:99px;overflow:hidden;margin-top:7px}.bar span{height:100%;display:block;background:linear-gradient(90deg,var(--pink),var(--purple));border-radius:99px}
+.section{margin-bottom:20px}.section-title{display:flex;justify-content:space-between;align-items:end;margin:0 0 12px;gap:10px}.section-title h2{margin:0;font-size:20px}.section-title p{margin:0;color:var(--muted);font-size:12px}
+.phase-list{display:grid;gap:8px}.phase-item{display:flex;align-items:center;gap:12px;padding:12px;border:1px solid var(--line);border-radius:13px;background:white}.phase-item.active{border-color:#e8a0c1;background:#fff5f9}.phase-item.done{opacity:.7}.phase-num{width:29px;height:29px;border-radius:10px;display:grid;place-items:center;background:#f2eff9;color:#6d5c98;font-weight:900;font-size:12px}.phase-item.active .phase-num{background:var(--pink);color:white}.phase-copy{flex:1}.phase-copy strong{display:block;font-size:13px}.phase-copy small{color:var(--muted);font-size:11px}.status{font-size:10px;font-weight:900;color:var(--muted)}
+.action-card{padding:22px;background:linear-gradient(135deg,#fff,#fff8fb);border:1px solid #f2e2eb;border-radius:18px;margin-bottom:18px}.action-card h2{margin:6px 0;font-size:23px}.action-card p{color:var(--muted);margin:6px 0 16px}.choice-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.choice{border:1px solid var(--line);border-radius:14px;background:white;padding:14px;text-align:left;color:var(--ink)}.choice strong{display:block;margin-bottom:3px}.choice small{display:block;color:var(--muted);font-weight:500}.choice.selected{border-color:var(--pink);box-shadow:0 0 0 2px #ef7cae22;background:#fff7fa}
+.kpi-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:18px}.kpi{background:white;border:1px solid var(--line);border-radius:14px;padding:14px}.kpi span{font-size:11px;color:var(--muted);display:block}.kpi strong{font-size:22px}
+.ranklist{display:grid;gap:8px}.rank-row{display:grid;grid-template-columns:42px minmax(0,1fr) 80px;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--line);border-radius:13px;background:white}.rank-row.me{border-color:#e69ac0;background:#fff5f9}.ranknum{font-size:17px;font-weight:950;text-align:center;color:#8a7ba9}.ranknum.top{color:var(--gold)}.trainee-name{font-weight:800;font-size:13px}.trainee-sub{font-size:11px;color:var(--muted)}.score{text-align:right;font-weight:900}.score small{display:block;color:var(--muted);font-size:10px;font-weight:500}
+.log{max-height:280px;overflow:auto;display:grid;gap:8px}.log-item{border-left:3px solid #e7a0c1;padding:7px 10px;background:#fcf9fd;border-radius:0 9px 9px 0;font-size:12px}.empty{text-align:center;padding:28px;color:var(--muted)}.modal-backdrop{position:fixed;inset:0;background:#241c35a6;display:none;align-items:center;justify-content:center;padding:18px;z-index:20}.modal-backdrop.show{display:flex}.modal{max-width:560px;width:100%;max-height:90vh;overflow:auto;background:white;border-radius:22px;box-shadow:0 20px 70px #0003}.modal-content{padding:24px}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field label{display:block;font-size:12px;font-weight:800;margin-bottom:6px}.field input,.field select{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:11px;background:#fff}.field.full{grid-column:1/-1}.modal-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:18px}
+.notice{padding:13px 15px;border-radius:13px;background:#f7f4ff;color:#655888;font-size:12px;margin-bottom:14px}.result{padding:20px;border-radius:16px;background:linear-gradient(135deg,#fff4f8,#f4f1ff);text-align:center;margin:12px 0}.result .big{font-size:46px;font-weight:950;color:#c9689b;line-height:1.2}.result h3{margin:5px}.result p{margin:5px;color:var(--muted)}
+.social-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.social-card{padding:12px;border:1px solid var(--line);border-radius:13px;background:#fff}.social-card strong{display:block;font-size:13px}.social-card p{font-size:12px;color:var(--muted);margin:5px 0}.relationship{font-size:11px;color:#a45c86;font-weight:800}.social-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.social-actions button{font-size:12px;padding:9px 11px}@media(max-width:540px){.social-grid{grid-template-columns:1fr}}\nfooter{text-align:center;color:#9b97a9;font-size:11px;margin-top:26px}
+@media(max-width:850px){.grid{grid-template-columns:1fr}.side-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.hero{padding:22px}.hero-stamp{width:78px;height:78px;flex-basis:78px}.kpi-row{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:540px){main{padding:0 12px 40px;margin-top:15px}.top{padding:12px}.brand{font-size:13px}.hero{padding:18px}.hero-stamp{display:none}.side-grid{grid-template-columns:1fr}.choice-grid{grid-template-columns:1fr}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}.rank-row{grid-template-columns:34px minmax(0,1fr) 64px}.panel-body{padding:15px}.panel-head{padding:15px}}
+</style>
+</head>
+<body>
+<header><div class="top">
+  <div class="brand"><div class="brandmark">101</div><div>PRODUCE 101 <span style="color:#b86b99">/ GIRL GROUP PROJECT</span></div></div>
+  <div class="topmeta"><span class="pill" id="roundPill">尚未開始</span><button class="ghost" id="saveBtn">存檔</button><button class="ghost" id="resetBtn">重新開始</button></div>
+</div></header>
+<main>
+  <section class="hero">
+    <div><div class="eyebrow">YOUR DEBUT JOURNEY STARTS HERE</div><h1>成為最後的 11 人之一。</h1><p>101 名練習生、數次公演與排名發布。101 位練習生各自成長、結盟與競爭。你的選擇會影響舞台與關係，但節目不會只圍著你轉。</p></div>
+    <div class="hero-stamp">DREAM<br>TO STAGE</div>
+  </section>
+  <div id="startBanner" class="action-card">
+    <div class="eyebrow">FIRST STEP</div><h2>準備好站上舞台了嗎？</h2><p>建立你的原創練習生。遊戲會自動建立另外 100 名 NPC，所有進度儲存在這台裝置的瀏覽器中。</p>
+    <button class="primary" id="startBtn">建立練習生，開始選秀　→</button>
+  </div>
+  <div id="game" style="display:none">
+    <div class="kpi-row">
+      <div class="kpi"><span>目前排名</span><strong id="kRank">—</strong></div>
+      <div class="kpi"><span>模擬票數</span><strong id="kVotes">—</strong></div>
+      <div class="kpi"><span>人氣指數</span><strong id="kPopularity">—</strong></div>
+      <div class="kpi"><span>體力狀態</span><strong id="kEnergy">—</strong></div>
+    </div>
+    <div class="grid">
+      <aside class="side-grid">
+        <section class="panel">
+          <div class="panel-head"><h3>我的練習生</h3><span class="pill" id="gradePill">未評級</span></div>
+          <div class="panel-body">
+            <div class="profile-top"><div class="avatar" id="avatar">✦</div><div><strong id="playerName">—</strong><div class="muted small" id="playerMeta">—</div><div class="small" id="playerCompany">—</div></div></div>
+            <div class="statgrid" id="stats"></div>
+            <div style="margin-top:15px"><div style="display:flex;justify-content:space-between;font-size:12px"><span class="muted">體力</span><strong id="energyText">100 / 100</strong></div><div class="bar"><span id="energyBar" style="width:100%"></span></div></div>
+            <div style="margin-top:13px"><div style="display:flex;justify-content:space-between;font-size:12px"><span class="muted">粉絲人氣</span><strong id="popText">20</strong></div><div class="bar"><span id="popBar" style="width:20%"></span></div></div>
+          </div>
+        </section>
+        <section class="panel">
+          <div class="panel-head"><h3>選秀進程</h3><span class="small muted" id="progressText">0 / 7</span></div>
+          <div class="panel-body"><div class="phase-list" id="phaseList"></div></div>
+        </section>
+      </aside>
+      <div>
+        <section class="action-card" id="actionCard"></section>
+        <section class="panel section"><div class="panel-head"><h3>練習生實境花絮</h3><span class="pill" id="socialStatus">觀察中</span></div><div class="panel-body" id="socialPanel"></div></section>
+        <section class="panel section">
+          <div class="panel-head"><h3>我的成長紀錄</h3><span class="pill" id="historyCount">0 筆紀錄</span></div>
+          <div class="panel-body" id="historyPanel"><div class="empty">完成第一個階段後，這裡就會留下你的能力與排名紀錄。</div></div>
+        </section>
+        <section class="panel section">
+          <div class="panel-head"><h3 id="rankTitle">練習生排名</h3><span class="pill" id="rankCount">101 人</span></div>
+          <div class="panel-body"><div class="ranklist" id="rankList"></div><div style="margin-top:12px;text-align:center"><button class="ghost" id="moreRankBtn">查看完整排名</button></div></div>
+        </section>
+        <section class="panel section">
+          <div class="panel-head"><h3>選秀紀錄</h3><span class="small muted">最新消息在最上方</span></div>
+          <div class="panel-body"><div class="log" id="log"></div></div>
+        </section>
+      </div>
+    </div>
+  </div>
+  <footer>原創同人風格模擬遊戲 · 所有票數與排名皆為程式模擬 · 本機存檔不會上傳</footer>
+</main>
+<div class="modal-backdrop" id="modalBackdrop"><div class="modal"><div class="modal-content" id="modalContent"></div></div></div>
+<script>
+(() => {
+const $ = id => document.getElementById(id);
+const phases = [
+ {name:"初次分級評價",short:"初評",desc:"各公司練習生展示準備舞台，導師給予 A～F 初始評級。"},
+ {name:"主題曲考核與再評價",short:"主題曲",desc:"練習原創主題曲，依練習成果重新評級，爭取中心位置。"},
+ {name:"第一次公演・組合對決",short:"一公",desc:"選擇表演曲風，與演唱同一首歌的另一隊進行舞台對決。"},
+ {name:"第一次排名發布",short:"101 → 61",desc:"前 61 名晉級，其餘練習生淘汰。"},
+ {name:"第二次公演・位置評價",short:"二公",desc:"選擇 Vocal、Dance 或 Rap 位置，展現專長與個人舞台實力。"},
+ {name:"概念曲選擇與第二次排名",short:"61 → 35",desc:"先選擇原創概念曲，再公布排名；前 35 名晉級。"},
+ {name:"第三次公演・概念評價",short:"三公",desc:"晉級練習生演出原創概念曲，爭取團隊獎勵與個人票數。"},
+ {name:"第三次排名發布",short:"35 → 22",desc:"前 22 名進入最終出道評價。"},
+ {name:"最終任務・出道歌曲評價",short:"四公",desc:"22 名練習生分為兩隊、每隊 11 人，選擇聲樂或饒舌定位完成舞台。"},
+ {name:"最終排名・11 人出道",short:"FINAL",desc:"綜合最終模擬投票公布 11 人出道組合，選秀旅程落幕。"}
+];
+const names = ["林知夏","沈予安","姜書妍","白允熙","徐恩彩","朴世琳","韓知恩","柳夏琳","金多恩","吳瑞妍","鄭敏書","宋有真","崔娜恩","尹彩媛","申秀雅","許星妍","羅恩菲","文智友","張瑞希","李夏恩","高敏智","孫藝琳","全素妍","安智秀","洪有娜","權世雅","南多熙","車恩星","梁書允","趙有利","方秀彬","盧佳恩","裴智妍","金彩琳","李知玟","朴恩書","鄭有彬","徐智安","姜娜英","尹瑞真","林秀晶","白恩雅","沈知妍","韓瑞恩","柳敏雅","金有莉","宋知慧","崔書妍","吳娜莉","鄭夏允","朴秀珍","李恩珠","張彩英","文素雅","申藝恩","許娜妍","羅智媛","高恩星","孫知敏","全娜恩","安書妍","洪智友","權恩彩","南瑞妍","車秀雅","梁知恩","趙恩熙","方恩雅","盧秀妍","裴娜恩","金書妍","李彩恩","朴知秀","鄭恩菲","徐有真","姜書恩","尹知妍","林娜恩","白智友","沈恩彩","韓秀妍","柳恩雅","金知妍","宋恩書","崔智友","吳知恩","鄭秀雅","朴娜恩","李書妍","張恩彩","文知恩","申瑞妍","許智友","羅秀雅","高知恩","孫瑞妍","全恩彩","安恩書","洪秀妍"];
+const companies = ["星曜娛樂","月光文化","Blue Note Studio","緋紅娛樂","無所屬","Aurora Label","花火經紀","Dreaming Works","NOVA Entertainment","獨立練習生"];
+const styles = ["清新甜美","冷豔酷颯","元氣可愛","夢幻仙氣","率性中性","成熟性感"];
+const skillNames = {vocal:"唱歌",dance:"舞蹈",rap:"饒舌",stage:"舞台",charm:"魅力"};
+const emoji = ["✦","♡","♪","✧","☾","❀","♬","☆","❋","✿"];
+let state = null, fullRanks = false;
+
+function rand(min,max){return Math.floor(Math.random()*(max-min+1))+min}
+function pick(a){return a[rand(0,a.length-1)]}
+function makeTrainee(i, player=false, data={}) {
+ const base = player ? (data.skills || {vocal:55,dance:55,rap:45,stage:55,charm:55}) : {vocal:rand(32,83),dance:rand(32,83),rap:rand(28,80),stage:rand(30,82),charm:rand(30,84)};
+ return {id:player?"player":"t"+i,name:data.name||names[i%names.length],age:data.age||rand(16,24),company:data.company||pick(companies),style:data.style||pick(styles),emoji:data.emoji||pick(emoji),skills:{...base},popularity:player?(data.popularity||22):rand(15,75),energy:player?(data.energy??100):rand(70,100),votes:0,alive:true,player,grade:"—",bonus:0,rank:0,story:""};
+}
+function strength(t){let s=t.skills;return s.vocal*.22+s.dance*.23+s.rap*.12+s.stage*.23+s.charm*.20}
+function score(t){return strength(t)*.62+t.popularity*.38+(t.bonus||0)}
+function rankMetric(t){return score(t)*0.62+((t.votes||0)/1000)*0.38}
+function ranked(){return state.trainees.filter(t=>t.alive).sort((a,b)=>rankMetric(b)-rankMetric(a))}
+function rankedByVotes(){return state.trainees.filter(t=>t.alive).sort((a,b)=>((b.votes||0)+(b.voteBenefit||0))-((a.votes||0)+(a.voteBenefit||0)) || rankMetric(b)-rankMetric(a))}
+function player(){return state.trainees.find(t=>t.player)}
+function addLog(msg){state.logs.unshift({day:state.logs.length+1,msg});state.logs=state.logs.slice(0,60)}
+function save(){if(state){localStorage.setItem("produce101girl_v1",JSON.stringify(state));flash("已儲存至此瀏覽器");}}
+function flash(msg){let old=$("toast");if(old)old.remove();let d=document.createElement("div");d.id="toast";d.textContent=msg;d.style.cssText="position:fixed;bottom:22px;left:50%;transform:translateX(-50%);z-index:50;background:#29233b;color:white;padding:12px 18px;border-radius:12px;box-shadow:0 8px 25px #0002;font-size:13px";document.body.appendChild(d);setTimeout(()=>d.remove(),2200)}
+function newGame(data){
+ const p=makeTrainee(-1,true,data); const list=[p];for(let i=0;i<100;i++)list.push(makeTrainee(i,false));
+ state={version:2,stage:0,completed:[],trainees:list,logs:[],history:[],playerId:"player",started:true,roundResult:null,eliminated:[],lastRank:101,rankExpanded:false,relationships:{},socialUsedStage:-1,episodeNews:[],episode:0};
+ list.filter(t=>!t.player).forEach(t=>{t.personality=t.personality||pick(["努力家","氣氛製造者","完美主義","慢熱型","天生舞台派","競爭心強"]);t.friendliness=t.friendliness??rand(25,75);t.rivalry=t.rivalry??rand(10,45);});
+ addLog("歡迎來到《女團出道計畫》！101 名練習生正式入場。");addLog("你的練習生已建立，接下來將接受初次分級評價。");
+ render();save();
+}
+function openModal(content){$("modalContent").innerHTML=content;$("modalBackdrop").classList.add("show")}
+function closeModal(){$("modalBackdrop").classList.remove("show")}
+$("modalBackdrop").addEventListener("click",e=>{if(e.target===$("modalBackdrop"))closeModal()});
+$("startBtn").onclick=()=>{
+ openModal(`<div class="eyebrow">TRAINEE PROFILE</div><h2 style="margin:5px 0 18px">建立你的練習生</h2><div class="notice">設定你的初始資料。五項能力總和不得超過 300（每項 30～80）；初始能力會影響評價結果，後續仍可透過訓練成長。</div><div class="notice" id="skillBudget" style="margin-top:8px">初始能力總和：278 / 300</div><form id="createForm"><div class="formgrid"><div class="field full"><label>藝名／姓名</label><input id="fName" maxlength="12" required placeholder="例如：林知夏"></div><div class="field"><label>年齡</label><select id="fAge">${Array.from({length:9},(_,i)=>`<option ${i===4?"selected":""}>${16+i}</option>`).join("")}</select></div><div class="field"><label>所屬公司（自由填寫）</label><input id="fCompany" maxlength="30" placeholder="例如：自創公司／個人練習生" value=""></div><div class="field full"><label>個人風格（自由填寫）</label><input id="fStyle" maxlength="40" placeholder="例如：清冷主唱、甜美元氣、Girl Crush、全能型" value=""></div><div class="field"><label>唱歌能力（30–80）</label><input class="skill-input" id="fVocal" type="number" min="30" max="80" value="58"></div><div class="field"><label>舞蹈能力（30–80）</label><input class="skill-input" id="fDance" type="number" min="30" max="80" value="58"></div><div class="field"><label>饒舌能力（30–80）</label><input class="skill-input" id="fRap" type="number" min="30" max="80" value="48"></div><div class="field"><label>舞台能力（30–80）</label><input class="skill-input" id="fStage" type="number" min="30" max="80" value="56"></div><div class="field full"><label>魅力能力（30–80）</label><input class="skill-input" id="fCharm" type="number" min="30" max="80" value="58"></div></div><div class="modal-actions"><button type="button" class="ghost" onclick="window.closeProfileModal()">取消</button><button class="primary" type="submit">進入選秀</button></div></form>`);
+ const skillIds=["fVocal","fDance","fRap","fStage","fCharm"];
+ const updateSkillBudget=()=>{const total=skillIds.reduce((sum,id)=>sum+Math.max(30,Math.min(80,Number($(id).value)||30)),0);const el=$("skillBudget");el.textContent=`初始能力總和：${total} / 300${total>300?"（超過上限，請調整）":"（符合限制）"}`;el.style.color=total>300?"#c0395a":"#32866c";return total};
+ skillIds.forEach(id=>$(id).addEventListener("input",updateSkillBudget));updateSkillBudget();
+ $("createForm").onsubmit=e=>{e.preventDefault();const val=id=>Math.max(30,Math.min(80,Number($(id).value)||30));const total=skillIds.reduce((sum,id)=>sum+val(id),0);if(total>300){flash(`初始能力總和為 ${total}，不可超過 300`);$("skillBudget").scrollIntoView({block:"center"});return}let data={name:$("fName").value.trim(),age:Number($("fAge").value),company:$("fCompany").value.trim()||"個人練習生",style:$("fStyle").value.trim()||"自由風格",skills:{vocal:val("fVocal"),dance:val("fDance"),rap:val("fRap"),stage:val("fStage"),charm:val("fCharm")}};if(!data.name){flash("請輸入藝名");return}closeModal();newGame(data)};
+};
+window.closeProfileModal=closeModal;
+$("saveBtn").onclick=()=>save();
+$("resetBtn").onclick=()=>openModal(`<div class="eyebrow">NEW SEASON</div><h2>重新開始選秀？</h2><p class="muted">目前的角色、排名與遊戲進度將被新遊戲取代。若想保留進度，請先按「存檔」。</p><div class="modal-actions"><button class="ghost" onclick="window.closeProfileModal()">取消</button><button class="danger" id="confirmReset">重新開始</button></div>`);
+document.addEventListener("click",e=>{if(e.target&&e.target.id==="confirmReset"){closeModal();$("startBanner").style.display="block";$("game").style.display="none";localStorage.removeItem("produce101girl_v1");state=null;flash("已清除本機遊戲存檔")}});
+$("moreRankBtn").onclick=()=>{fullRanks=!fullRanks;renderRanks()};
+function render(){
+ const started=!!state;$("startBanner").style.display=started?"none":"block";$("game").style.display=started?"block":"none";if(!started){$("roundPill").textContent="尚未開始";return}
+ const p=player(),r=ranked(),rank=r.findIndex(t=>t.player)+1;
+ $("roundPill").textContent=state.stage>=9?"選秀已結束":`第 ${state.stage+1} 階段 / 共 10 階段`;
+ $("kRank").textContent=rank?`第 ${rank} 名`:"已淘汰";$("kVotes").textContent=(p.votes||Math.round(p.popularity*800)).toLocaleString();$("kPopularity").textContent=Math.round(p.popularity);$("kEnergy").textContent=p.energy+"%";
+ $("avatar").textContent=p.emoji;$("playerName").textContent=p.name;$("playerMeta").textContent=`${p.age} 歲・${p.style}`;$("playerCompany").textContent=p.company;$("gradePill").textContent=p.grade;
+ $("stats").innerHTML=Object.entries(skillNames).map(([k,n])=>`<div class="stat"><label>${n}</label><strong>${Math.round(p.skills[k])}</strong><div class="bar"><span style="width:${p.skills[k]}%"></span></div></div>`).join("");
+ $("energyText").textContent=`${p.energy} / 100`;$("energyBar").style.width=p.energy+"%";$("popText").textContent=Math.round(p.popularity);$("popBar").style.width=p.popularity+"%";
+ $("progressText").textContent=`${state.completed.length} / 10`;
+ $("phaseList").innerHTML=phases.map((ph,i)=>`<div class="phase-item ${i===state.stage?"active":state.completed.includes(i)?"done":""}"><div class="phase-num">${state.completed.includes(i)?"✓":String(i+1).padStart(2,"0")}</div><div class="phase-copy"><strong>${ph.short}</strong><small>${ph.name}</small></div><span class="status">${state.completed.includes(i)?"完成":i===state.stage?"進行中":i>state.stage?"未解鎖":"—"}</span></div>`).join("");
+ renderAction();renderRanks();renderHistory();renderSocial();$("log").innerHTML=state.logs.map(l=>`<div class="log-item">${escapeHtml(l.msg)}</div>`).join("");
+}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function renderAction(){
+ const p=player(),stage=state.stage,dead=!p.alive;
+ if(dead){$("actionCard").innerHTML=`<div class="eyebrow">JOURNEY ENDED</div><h2>這次的選秀旅程到此為止。</h2><p>你未能晉級下一輪，但每一次舞台都是成長。可以重新開始，嘗試不同能力配置與訓練策略。</p><button class="primary" onclick="window.restartGame()">重新挑戰</button>`;return}
+ if(stage>=9){let r=rankedByVotes(),final=r.slice(0,11),pr=final.findIndex(t=>t.player);$("actionCard").innerHTML=`<div class="eyebrow">THE DEBUT LINEUP</div><h2>最終排名公布</h2><p>聚光燈落下，最後 11 個名字正式揭曉。感謝你參與這段選秀旅程。</p><div class="result"><div class="big">${pr>=0?"第 "+(pr+1)+" 名":"第 "+(r.findIndex(t=>t.player)+1)+" 名"}</div><h3>${pr>=0?"恭喜你成功出道！":"這次與出道席位擦肩而過"}</h3><p>${pr>=0?"你成為女團出道成員之一。":"練習生旅程正式結束，期待下一次舞台。"}</p></div><div class="ranklist">${final.map((t,i)=>`<div class="rank-row ${t.player?"me":""}"><div class="ranknum ${i<3?"top":""}">${String(i+1).padStart(2,"0")}</div><div><div class="trainee-name">${escapeHtml(t.name)} ${t.player?"（你）":""}</div><div class="trainee-sub">${escapeHtml(t.company)}・${escapeHtml(t.style)}${t.finalTeam?`・${t.finalTeam}隊 ${({vocal:"主唱",sub:"副唱",rap:"饒舌"})[t.finalPosition]||""}`:""}</div></div><div class="score">${Math.round(score(t))}<small>綜合分</small></div></div>`).join("")}</div><div style="margin-top:16px"><button class="primary" onclick="window.restartGame()">再玩一次</button></div>`;return}
+ const desc=phases[stage];let html=`<div class="eyebrow">STAGE ${String(stage+1).padStart(2,"0")} / 10</div><h2>${desc.name}</h2><p>${desc.desc}</p>`;
+ const storyScenes=[
+  {title:"初入宿舍：第一個晚上",text:"鏡頭跟著你走進練習生宿舍。有人忙著記住每個人的名字，也有人躲在角落反覆練習。隔天就是初評，你決定怎麼面對這群未來的對手？",opts:[["主動和大家打招呼","留下親切、好相處的第一印象","friendly"],["戴上耳機繼續練習","先把實力準備好，讓舞台說話","focus"]]},
+  {title:"主題曲地獄特訓",text:"主題曲音樂一遍又一遍播放，腳步開始沉重，鏡子裡的自己也越來越陌生。隊友問你要不要一起練到熄燈。",opts:[["陪隊友練到最後","建立默契，也讓自己更有舞台感","team"],["先休息保存體力","調整狀態，避免正式考核失常","rest"]]},
+  {title:"一公分組：隊友意見不合",text:"公演分組後，大家對舞台中心和表演風格各有想法。排練時間所剩不多，你選擇站出來處理這場小風波。",opts:[["提出折衷方案","讓隊伍先團結起來","leader"],["爭取自己的舞台想法","相信自己的判斷，勇敢表達","bold"]]},
+  {title:"第一次排名前夜",text:"明天就要公布第一次排名。宿舍比平常安靜，練習生們假裝若無其事，卻不時看向彼此。你收到一位練習生的訊息：「你覺得我們能一起留下來嗎？」",opts:[["回覆她：一起努力到最後","用鼓勵支持彼此","comfort"],["把手機放下，整理心情","把注意力放回自己能掌握的事","calm"]]},
+  {title:"位置評價：機會只有一次",text:"你必須決定要在最擅長的位置穩穩發揮，還是挑戰能讓觀眾重新認識你的新領域。導師提醒：勇氣很重要，準備也一樣。",opts:[["挑戰自己的弱項","拓展能力，展現成長幅度","challenge"],["選擇最有把握的方向","把練習成果完整呈現","steady"]]},
+  {title:"概念曲選擇前的深夜",text:"概念曲練習室裡傳出不同風格的音樂。你聽見其他練習生討論分組，也開始思考：你想讓觀眾記住怎樣的自己？",opts:[["選擇最符合個性的路線","強化個人魅力","identity"],["選擇能突破形象的路線","讓觀眾看見反差與成長","change"]]},
+  {title:"三公彩排：舞台出現失誤",text:"正式彩排時，隊伍有一個走位接不上。所有人都看向你，時間不多了，你可以先穩住隊友，也可以立刻提出新的走位。",opts:[["先安撫隊友再重排","團隊默契與穩定度提升","support"],["立刻提出替代走位","展現臨場反應與舞台掌控","solve"]]},
+  {title:"第三次排名：只剩最後席位",text:"公布前，練習生們圍成一圈互相打氣。有人握緊手心，有人忍不住落淚。你想對自己說些什麼？",opts:[["不管結果都不否定自己","穩住心態，維持表現","mind"],["把不甘心化成最後衝刺","提高人氣，向夢想再靠近一步","push"]]},
+  {title:"最終公演：隊長詢問你的想法",text:"最後舞台的分工即將定案。隊友希望你表態：要穩定完成舞台，還是挑戰最容易被記住的高光段落？",opts:[["主動承擔關鍵段落","展現舞台企圖心","spotlight"],["協助隊友把整體磨合好","重視團隊完成度","ensemble"]]}
+ ];
+ if(stage<storyScenes.length){const sc=storyScenes[stage],picked=state.storyChoices&&state.storyChoices[stage];html+=`<div class="panel section" style="margin:16px 0;padding:16px;background:rgba(255,255,255,.035);border:1px solid var(--line);border-radius:14px"><div class="eyebrow">EPISODE STORY · 劇情互動 ${stage+1}/9</div><h3 style="margin:6px 0 8px">${sc.title}</h3><p style="line-height:1.8">${sc.text}</p><div class="choice-grid">${sc.opts.map(o=>`<button class="choice story-choice ${picked===o[2]?'selected':''}" data-story="${o[2]}"><strong>${o[0]}</strong><small>${o[1]}</small></button>`).join('')}</div>${picked?'<p class="muted" style="margin-top:10px">已做出本集選擇；你仍可以在本階段繼續準備與決定舞台策略。</p>':'<p class="muted" style="margin-top:10px">先選擇你的劇情行動，再決定本階段的舞台策略。不同選擇會影響能力、人氣、體力或人際關係。</p>'}</div>`;}
+ if(stage===0) html+=`<div class="choice-grid">${choice("穩定發揮","以均衡實力完成初舞台","balanced","維持能力表現")}${choice("展現主唱實力","將唱功作為舞台焦點","vocal","唱歌表現加成")}${choice("舞蹈魅力全開","用舞蹈抓住導師目光","dance","舞蹈表現加成")}${choice("個人特色舞台","以魅力與表情管理吸引注意","charm","人氣成長加成")}</div><div style="margin-top:14px"><button class="primary" onclick="window.performStage('initial')">進行初評 →</button></div>`;
+ else if(stage===1) html+=`<div class="choice-grid">${choice("高強度練習","能力成長較多，消耗較多體力","hard","能力提升較大")}${choice("均衡練習","穩定提升整體舞台能力","balanced","均衡成長")}${choice("表情管理","練習鏡頭感與舞台表情","charm","舞台與魅力提升")}${choice("休息調整","恢復體力，保持狀態","rest","恢復體力")}</div><div style="margin-top:14px"><button class="primary" onclick="window.performStage('theme')">開始主題曲考核 →</button></div>`;
+ else if(stage===2) html+=`<div class="notice">一公採用「同曲雙隊對決」：每個曲風都會有兩支隊伍演出同一首原創風格曲，隊伍勝負與個人舞台表現會影響模擬票數。</div><div class="choice-grid">${choice("青春活力曲","清爽明亮、重視表情與整齊度","fresh","原創曲風：青春流行")}${choice("強烈舞曲","節奏鮮明、重視舞蹈與氣場","power","原創曲風：強烈舞曲")}${choice("抒情實力曲","以穩定唱功與情感表達取勝","vocal","原創曲風：抒情流行")}${choice("嘻哈節奏曲","展現節奏感、饒舌與個人特色","rap","原創曲風：Hip-hop")}</div><div style="margin-top:14px"><button class="primary" onclick="window.performStage('one')">選曲並進行一公 →</button></div>`;
+ else if(stage===3) html+=`<div class="notice">第一次排名發布：101 名練習生將縮減至 61 名。排名依模擬投票與表演表現計算。</div><button class="primary" onclick="window.performStage('elim1')">公布第一次排名 →</button>`;
+ else if(stage===4) html+=`<div class="choice-grid">${choice("主唱 Vocal","挑戰高音與情感詮釋","vocal","唱歌能力影響較高")}${choice("主舞 Dance","挑戰舞蹈細節與隊形","dance","舞蹈能力影響較高")}${choice("饒舌 Rap","展現節奏與個人風格","rap","饒舌能力影響較高")}${choice("全能 Ace","平均展現多面向實力","allround","整體能力影響")}</div><div style="margin-top:14px"><button class="primary" onclick="window.performStage('two')">開始二公位置評價 →</button></div>`;
+ else if(stage===5) html+=`<div class="notice">依第一季節目流程，概念曲選擇在第二次排名公布前進行。請先選擇你想挑戰的原創概念曲，再公布排名；只有前 35 名能參與概念舞台。</div><div class="choice-grid">${choice("24 小時不打烊","電子舞曲、節奏感強","dream","原創概念：EDM")}${choice("閃耀本能","Girl Crush、自信強勢","crush","原創概念：強烈流行")}${choice("心動同頻","清新甜美、青春感","youth","原創概念：清新流行")}${choice("無重力夢境","夢幻氛圍、細膩表現","dark","原創概念：夢幻流行")}${choice("甜蜜暴擊","俏皮可愛、節奏活潑","sweet","原創概念：可愛流行")}</div><div style="margin-top:14px"><button class="primary" onclick="window.performStage('elim2')">確認概念曲並公布第二次排名 →</button></div>`;
+ else if(stage===6) html+=`<div class="notice">你的概念曲：<strong>${({"dream":"24 小時不打烊","crush":"閃耀本能","youth":"心動同頻","dark":"無重力夢境","sweet":"甜蜜暴擊"})[state.conceptSong||"dream"]||"尚未選擇"}</strong>。前 35 名將正式演出原創概念曲；勝隊可獲得模擬 150,000 票團隊獎勵。</div><button class="primary" onclick="window.performStage('three')">登上三公舞台 →</button>`;
+ else if(stage===7) html+=`<div class="notice">概念評價後，前 20 名進入最終出道評價。這是最後一次排名淘汰。</div><button class="primary" onclick="window.performStage('elim3')">公布第三次排名 →</button>`;
+ else if(stage===8) html+=`<div class="notice">最終任務參考第一季形式：22 名練習生分成兩隊，每隊 11 人。選擇你的隊伍與定位；其他練習生會自動分配，最終仍由模擬觀眾投票決定出道 11 人。</div><div class="choice-grid">${choice("A 隊・主唱","負責主旋律與高音段落","teamA_vocal","主唱定位")}${choice("A 隊・副唱","負責旋律、和聲與舞台表現","teamA_sub","副唱定位")}${choice("A 隊・饒舌","負責節奏與饒舌段落","teamA_rap","饒舌定位")}${choice("B 隊・主唱","負責主旋律與高音段落","teamB_vocal","主唱定位")}${choice("B 隊・副唱","負責旋律、和聲與舞台表現","teamB_sub","副唱定位")}${choice("B 隊・饒舌","負責節奏與饒舌段落","teamB_rap","饒舌定位")}</div><div style="margin-top:14px"><button class="primary" onclick="window.performStage('debut')">完成最終出道評價 →</button></div>`;
+ $("actionCard").innerHTML=html;
+ document.querySelectorAll(".choice:not(.story-choice)").forEach(el=>el.onclick=()=>{document.querySelectorAll(".choice:not(.story-choice)").forEach(x=>x.classList.remove("selected"));el.classList.add("selected");state.selection=el.dataset.value});
+ document.querySelectorAll(".story-choice").forEach(el=>el.onclick=()=>window.chooseStory(el.dataset.story));
+}
+window.chooseStory=(key)=>{if(!state)return;const stage=state.stage;state.storyChoices=state.storyChoices||{};if(state.storyChoices[stage]){flash("本階段劇情已選擇，請繼續節目流程");return;}const p=player();const target=state.trainees.filter(t=>!t.player&&t.alive).sort((a,b)=>((state.relationships[b.id]||0)-(state.relationships[a.id]||0)))[0];const outcomes={
+ friendly:()=>{p.popularity+=3;if(target)addRelation(target.id,5);return "你主動認識大家，宿舍氣氛變得輕鬆。人氣 +3，也更容易和練習生建立連結。"},focus:()=>{adjust(p,"vocal",1);adjust(p,"stage",2);p.energy-=3;return "你把注意力放在練習上，細節更穩了。舞台 +2、唱歌 +1，體力 -3。"},
+ team:()=>{adjust(p,"stage",2);p.energy-=5;if(target)addRelation(target.id,4);return "你和隊友把動作磨合得更整齊。舞台 +2、體力 -5。"},rest:()=>{p.energy=Math.min(100,p.energy+12);return "你補足睡眠，精神明顯恢復。體力 +12。"},
+ leader:()=>{adjust(p,"charm",2);p.popularity+=2;return "大家接受你的折衷方案。魅力 +2、人氣 +2。"},bold:()=>{adjust(p,"stage",2);p.popularity+=3;p.energy-=3;return "你勇敢說出自己的想法，鏡頭捕捉到你的自信。舞台 +2、人氣 +3、體力 -3。"},
+ comfort:()=>{if(target)addRelation(target.id,8);p.popularity+=2;return "你的訊息讓對方安心，也讓觀眾看到溫柔的一面。關係提升、人氣 +2。"},calm:()=>{p.energy=Math.min(100,p.energy+5);return "你整理思緒後重新找回節奏。體力 +5。"},
+ challenge:()=>{const k=pick(["vocal","dance","rap"]);adjust(p,k,3);p.energy-=5;return `你挑戰弱項，${skillNames[k]} +3、體力 -5。`},steady:()=>{adjust(p,"stage",2);return "你把最熟悉的部分練到更穩。舞台 +2。"},
+ identity:()=>{adjust(p,"charm",3);p.popularity+=2;return "你更清楚自己的定位。魅力 +3、人氣 +2。"},change:()=>{adjust(p,"stage",2);adjust(p,"charm",1);return "你決定突破舒適圈。舞台 +2、魅力 +1。"},
+ support:()=>{if(target)addRelation(target.id,5);adjust(p,"charm",2);return "隊友重新振作，團隊關係提升。魅力 +2。"},solve:()=>{adjust(p,"stage",3);p.energy-=4;return "你提出新的走位，彩排順利接上。舞台 +3、體力 -4。"},
+ mind:()=>{p.energy=Math.min(100,p.energy+8);return "你穩住心態，沒有讓焦慮消耗自己。體力 +8。"},push:()=>{p.popularity+=5;p.energy-=5;return "你把不甘心化成動力。人氣 +5、體力 -5。"},
+ spotlight:()=>{adjust(p,"stage",3);p.popularity+=3;p.energy-=5;return "你接下高光段落，成為舞台焦點。舞台 +3、人氣 +3、體力 -5。"},ensemble:()=>{adjust(p,"charm",2);p.energy=Math.min(100,p.energy+3);return "你協助隊友磨合，整體表演更完整。魅力 +2、體力 +3。"}
+ };const message=(outcomes[key]||(()=>"你做出了自己的選擇。"))();state.storyChoices[stage]=key;state.episodeNews=state.episodeNews||[];state.episodeNews.unshift(`【${phases[stage].short}劇情】${message}`);state.logs.unshift({msg:`劇情選擇：${message}`,time:new Date().toISOString()});p.energy=Math.max(0,Math.min(100,p.energy));p.popularity=Math.max(1,Math.min(100,p.popularity));save();render();};
+function choice(title,desc,value,tag){return `<button class="choice" data-value="${value}"><strong>${title}</strong><small>${desc}</small><small style="color:#b66d98;margin-top:5px">${tag}</small></button>`}
+
+function ensureSocialState(){
+ if(!state.relationships)state.relationships={};
+ if(!Array.isArray(state.episodeNews))state.episodeNews=[];
+ if(state.socialUsedStage==null)state.socialUsedStage=-1;
+ state.trainees.filter(t=>!t.player).forEach(t=>{
+   if(!t.personality)t.personality=pick(["努力家","氣氛製造者","完美主義","慢熱型","天生舞台派","競爭心強"]);
+   if(t.friendliness==null)t.friendliness=rand(25,75);
+   if(t.rivalry==null)t.rivalry=rand(10,45);
+ });
+}
+function relationWith(id){ensureSocialState();return Number(state.relationships[id]||0)}
+function addRelation(id,delta){ensureSocialState();state.relationships[id]=Math.max(-100,Math.min(100,relationWith(id)+delta))}
+function renderSocial(){
+ if(!state)return;ensureSocialState();
+ const p=player(),others=state.trainees.filter(t=>!t.player&&t.alive);
+ const sorted=[...others].sort((a,b)=>relationWith(b.id)-relationWith(a.id));
+ const featured=sorted.slice(0,4);
+ const canAct=state.socialUsedStage!==state.stage&&state.stage<9&&p.alive;
+ const news=(state.episodeNews||[]).slice(-3).reverse();
+ $("socialStatus").textContent=canAct?"本階段可互動":"本階段已互動";
+ const relCards=featured.map(t=>{const v=relationWith(t.id);const label=v>=35?"信任的夥伴":v>=10?"友好":v<=-30?"明顯不合":v<=-10?"競爭緊張":"普通同伴";return `<div class="social-card"><strong>${escapeHtml(t.name)} ${t.player?"（你）":""}</strong><p>${escapeHtml(t.company)}・${escapeHtml(t.personality||"練習生")}</p><div class="relationship">${label}・關係值 ${v>0?"+":""}${v}</div></div>`}).join("");
+ const target=pick(others.length?others:[p]);
+ $("socialPanel").innerHTML=`<div class="notice">101 人的故事不只圍繞你。其他練習生會自行練習、建立友情與競爭，也會因舞台表現改變人氣。每個選秀階段可選擇一個互動，影響關係與個人狀態。</div><div class="social-grid">${relCards||'<div class="empty">目前沒有可互動的練習生。</div>'}</div><div class="social-actions"><button class="secondary" ${canAct?'':'disabled'} onclick="window.socialAction('comfort')">安慰失落的練習生</button><button class="secondary" ${canAct?'':'disabled'} onclick="window.socialAction('practice')">邀請練習生一起加練</button><button class="secondary" ${canAct?'':'disabled'} onclick="window.socialAction('rival')">向人氣對手下戰帖</button><button class="ghost" ${canAct?'':'disabled'} onclick="window.socialAction('observe')">觀察練習室花絮</button></div><h4 style="margin:18px 0 8px">本集花絮</h4>${news.length?news.map(n=>`<div class="log-item">${escapeHtml(n)}</div>`).join(""):'<div class="empty" style="padding:12px">完成階段或進行互動後，這裡會出現練習生之間的故事。</div>'}`;
+}
+window.socialAction=function(kind){
+ if(!state)return;ensureSocialState();
+ if(state.socialUsedStage===state.stage){flash("本階段已進行過互動，下一階段再來看看");return}
+ const p=player(),others=state.trainees.filter(t=>!t.player&&t.alive);
+ if(!p.alive||state.stage>=9||!others.length)return;
+ const target=pick(others),rel=relationWith(target.id);
+ let msg="";
+ if(kind==="comfort"){
+   const delta=target.personality==="慢熱型"?14:rand(6,12);addRelation(target.id,delta);p.popularity=Math.min(100,p.popularity+1);p.energy=Math.min(100,p.energy+3);
+   msg=`宿舍花絮：${p.name}注意到${target.name}因練習不順而低落，主動陪她聊天。兩人的關係升溫，${target.name}重新打起精神。`;
+ }else if(kind==="practice"){
+   const skill=pick(["vocal","dance","rap","stage","charm"]);adjust(p,skill,2);adjust(target,skill,rand(1,3));addRelation(target.id,rand(5,11));p.energy=Math.max(0,p.energy-6);target.energy=Math.max(20,target.energy-5);target.popularity=Math.min(99,target.popularity+rand(1,3));
+   msg=`練習室花絮：${p.name}邀請${target.name}一起加練${skillNames[skill]}。兩人互相補足弱點，實力都有小幅成長。`;
+ }else if(kind==="rival"){
+   const delta=target.personality==="競爭心強"?-rand(2,7):rand(-5,5);addRelation(target.id,delta);adjust(p,"stage",2);p.popularity=Math.min(100,p.popularity+rand(1,3));target.rivalry=Math.min(100,(target.rivalry||30)+8);
+   msg=`競爭花絮：${p.name}向${target.name}提出舞台較量。練習生們開始關注這場對決，${target.name}也把你視為值得注意的對手。`;
+ }else{
+   const candidates=others.filter(t=>t.id!==target.id);const other=pick(candidates.length?candidates:others);
+   addRelation(target.id,rand(1,4));addRelation(other.id,rand(-2,3));
+   msg=pick([`${target.name}主動幫${other.name}修正舞步，兩人默契提升。`,`${target.name}和${other.name}對 Part 分配有不同意見，練習室氣氛一度緊繃。`,`${target.name}練習結束後仍留下來加練，導師注意到她的努力。`,`${other.name}在休息時分享零食，讓緊張的練習室氣氛緩和下來。`]);
+ }
+ state.socialUsedStage=state.stage;
+ state.episodeNews.push(msg);state.episodeNews=state.episodeNews.slice(-12);addLog(msg);save();render();
+};
+function autonomousTraineeLife(stageType){
+ ensureSocialState();
+ const alive=state.trainees.filter(t=>t.alive),npcs=alive.filter(t=>!t.player);
+ // Every episode, NPCs make their own progress and social choices independently of the player's action.
+ npcs.forEach(t=>{
+   const roll=Math.random();
+   if(roll<.30){const skill=pick(["vocal","dance","rap","stage","charm"]);adjust(t,skill,rand(1,3));t.energy=Math.max(15,t.energy-rand(2,7));}
+   else if(roll<.43){t.energy=Math.min(100,t.energy+rand(5,12));}
+   t.popularity=Math.max(1,Math.min(99,t.popularity+rand(-3,4)));
+ });
+ if(npcs.length>1){
+   for(let i=0;i<Math.min(5,Math.ceil(npcs.length/12));i++){
+     const a=pick(npcs),b=pick(npcs.filter(t=>t.id!==a.id));if(!b)continue;
+     if(Math.random()<.55){addRelation(a.id,rand(2,8));addRelation(b.id,rand(1,6));}
+     else {a.rivalry=Math.min(100,(a.rivalry||20)+rand(2,6));b.rivalry=Math.min(100,(b.rivalry||20)+rand(2,6));}
+   }
+ }
+ const stories=[
+  ()=>{const t=pick(npcs);return `${t.name}在所有人休息時仍留在練習室，展現「努力家」的一面，導師對她留下印象。`;},
+  ()=>{const t=pick(npcs),b=pick(npcs.filter(x=>x.id!==t.id));return b?`${t.name}與${b.name}因為舞台分工產生不同意見，最後決定用完整彩排來說服彼此。`:`${t.name}默默完成了今天的練習。`;},
+  ()=>{const t=pick(npcs);return `${t.name}在鏡頭前展現反差魅力，節目播出後人氣悄悄上升。`;},
+  ()=>{const t=pick(npcs);return `${t.name}在練習中失誤後沒有放棄，其他練習生也開始重新看待她。`;},
+  ()=>{const t=pick(npcs);return `${t.name}和同公司的練習生互相打氣，形成小小的支援圈。`;}
+ ];
+ if(npcs.length){const story=pick(stories)();state.episodeNews.push(story);state.episodeNews=state.episodeNews.slice(-12);addLog("練習生花絮："+story);}
+}
+function renderRanks(){
+ if(!state)return;let r=ranked(),p=player(),limit=fullRanks?Math.min(101,r.length):Math.min(10,r.length);$("rankCount").textContent=`${r.length} 人`; $("rankTitle").textContent=state.stage>=9?"最終出道排名":"即時模擬排名";
+ $("rankList").innerHTML=r.slice(0,limit).map((t,i)=>`<div class="rank-row ${t.player?"me":""}"><div class="ranknum ${i<3?"top":""}">${String(i+1).padStart(2,"0")}</div><div><div class="trainee-name">${escapeHtml(t.name)} ${t.player?"（你）":""}</div><div class="trainee-sub">${escapeHtml(t.company)}・${escapeHtml(t.style)}・${t.grade}</div></div><div class="score">${Math.round(score(t))}<small>綜合分</small></div></div>`).join("")||`<div class="empty">目前沒有可顯示的排名</div>`;
+ $("moreRankBtn").textContent=fullRanks?"收合排名":"查看完整排名";$("moreRankBtn").style.display=r.length>10?"inline-block":"none";
+}
+function renderHistory(){
+ if(!state)return;
+ const history=state.history||[];
+ $("historyCount").textContent=`${history.length} 筆紀錄`;
+ if(!history.length){$("historyPanel").innerHTML='<div class="empty">完成第一個階段後，這裡就會留下你的能力與排名紀錄。</div>';return;}
+ const first=history[0],latest=history[history.length-1];
+ const keys=["vocal","dance","rap","stage","charm"],labels={vocal:"唱歌",dance:"舞蹈",rap:"饒舌",stage:"舞台",charm:"魅力"};
+ const delta=(a,b)=>{const d=Math.round(a-b);return d>0?`+${d}`:`${d}`};
+ const cards=keys.map(k=>`<div class="stat"><label>${labels[k]}・初始 ${first.skills[k]}</label><strong>${latest.skills[k]}</strong><div class="bar"><span style="width:${Math.min(100,latest.skills[k])}%"></span></div><div class="small" style="color:${latest.skills[k]>=first.skills[k]?'#32866c':'#b94b5a'};margin-top:4px">累計 ${delta(latest.skills[k],first.skills[k])}</div></div>`).join("");
+ const rows=[...history].reverse().map(h=>{
+   const rankText=h.rank?`第 ${h.rank} 名`:"—";
+   const change=h.rankChange==null?"首次紀錄":h.rankChange<0?`進步 ${Math.abs(h.rankChange)} 名`:h.rankChange>0?`下降 ${h.rankChange} 名`:"排名持平";
+   return `<tr><td style="padding:10px 7px;border-bottom:1px solid var(--line);white-space:nowrap"><strong>${escapeHtml(h.phase)}</strong><div class="small muted">${escapeHtml(h.choiceLabel||"階段結算")}</div></td><td style="padding:10px 7px;border-bottom:1px solid var(--line);font-weight:850;white-space:nowrap">${rankText}<div class="small muted">${change}</div></td><td style="padding:10px 7px;border-bottom:1px solid var(--line);white-space:nowrap">${Number(h.votes||0).toLocaleString()}<div class="small muted">模擬票數</div></td><td style="padding:10px 7px;border-bottom:1px solid var(--line);white-space:nowrap">${h.grade||"—"} 級<div class="small muted">體力 ${h.energy}</div></td></tr>`;
+ }).join("");
+ $("historyPanel").innerHTML=`<div class="notice">每次階段結算都會保存當下數值。能力成長以第一筆紀錄為基準；排名變化以最近一次已保存的排名為基準。</div><div class="statgrid" style="margin-top:0;margin-bottom:18px">${cards}</div><div class="kpi-row" style="grid-template-columns:repeat(3,minmax(0,1fr))"><div class="kpi"><span>排名變化</span><strong>${first.rank&&latest.rank?`${latest.rank<first.rank?"↑":"↓"} ${Math.abs(first.rank-latest.rank)} 名`:"—"}</strong></div><div class="kpi"><span>人氣變化</span><strong>${delta(latest.popularity,first.popularity)}</strong></div><div class="kpi"><span>累積階段</span><strong>${history.length}</strong></div></div><div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:12px"><thead><tr style="text-align:left;color:var(--muted)"><th style="padding:8px 7px">階段</th><th style="padding:8px 7px">排名</th><th style="padding:8px 7px">票數</th><th style="padding:8px 7px">狀態</th></tr></thead><tbody>${rows}</tbody></table></div><div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap"><button class="ghost" id="exportHistoryBtn">匯出成長紀錄 JSON</button><button class="ghost" id="exportCsvBtn">匯出成長紀錄 CSV</button></div>`;
+ $("exportHistoryBtn").onclick=()=>downloadText("produce101_growth_history.json",JSON.stringify({player:{name:player().name,company:player().company},history},null,2),"application/json;charset=utf-8");
+ $("exportCsvBtn").onclick=()=>{const cols=["階段","選擇","排名","模擬票數","人氣","體力","評級","唱歌","舞蹈","饒舌","舞台","魅力"];const lines=[cols,...history.map(h=>[h.phase,h.choiceLabel,h.rank,h.votes,h.popularity,h.energy,h.grade,h.skills.vocal,h.skills.dance,h.skills.rap,h.skills.stage,h.skills.charm])];const csv="\uFEFF"+lines.map(row=>row.map(v=>`"${String(v??"").replace(/"/g,'""')}"`).join(",")).join("\r\n");downloadText("produce101_growth_history.csv",csv,"text/csv;charset=utf-8");};
+}
+function downloadText(filename,content,type){const blob=new Blob([content],{type}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=filename;document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);}
+function choiceLabel(key){const labels={balanced:"穩定發揮／均衡練習",vocal:"唱歌主攻",dance:"舞蹈主攻",charm:"魅力與表情管理",hard:"高強度練習",rest:"休息調整",fresh:"清新活力組",power:"強烈酷帥組",allround:"全能挑戰",rap:"饒舌定位",dream:"夢幻仙境",crush:"Girl Crush",youth:"青春校園",dark:"暗黑魅惑",light:"出道曲 A：LIGHT UP",break:"出道曲 B：BREAK THE RULE"};return labels[key]||"階段結算";}
+function selected(){return state.selection||"balanced"}
+function randomStory(t){const a=[`${t.name}在練習室留下來加練，其他練習生也注意到她的努力。`,`${t.name}在鏡頭前展現了意外的反差魅力。`,`${t.name}和隊友重新調整隊形，舞台默契明顯提升。`,`${t.name}因為穩定表現獲得導師稱讚。`,`${t.name}在休息時間主動幫助其他練習生，觀眾好感上升。`];return pick(a)}
+function adjust(t,key,val){if(key==="allround"){["vocal","dance","rap","stage","charm"].forEach(k=>t.skills[k]=Math.min(99,t.skills[k]+val));return}if(t.skills[key]!=null)t.skills[key]=Math.min(99,t.skills[key]+val)}
+function applyStageEffects(type,choiceKey){
+ const p=player(),alive=state.trainees.filter(t=>t.alive);
+ // NPCs live their own lives: training, resting, shifting popularity, and forming relationships.
+ autonomousTraineeLife(type);
+ // NPC energy varies by activity rather than always dropping, so the cast feels less scripted.
+ if(type==="initial"){
+   let key=choiceKey==="vocal"?"vocal":choiceKey==="dance"?"dance":choiceKey==="charm"?"charm":"allround";
+   if(key==="allround")adjust(p,"allround",1);else adjust(p,key,4);
+   p.grade=strength(p)>=68?"A":strength(p)>=60?"B":strength(p)>=51?"C":strength(p)>=42?"D":"F";
+   p.popularity+=rand(2,6);p.energy-=8;p.votes=Math.round(p.popularity*800);
+   addLog(`初次分級評價：${p.name}獲得 ${p.grade} 級。${p.grade==="A"?"你以亮眼實力成為焦點。":"導師提醒你持續打磨自己的優勢。"}`);
+ }else if(type==="theme"){
+   if(choiceKey==="hard"){adjust(p,"allround",3);p.energy-=25}
+   else if(choiceKey==="balanced"){adjust(p,"allround",2);p.energy-=14}
+   else if(choiceKey==="charm"){adjust(p,"stage",2);adjust(p,"charm",4);p.popularity+=5;p.energy-=12}
+   else {p.energy=Math.min(100,p.energy+28);p.popularity+=1}
+   p.grade=strength(p)>=72?"A":strength(p)>=63?"B":strength(p)>=54?"C":strength(p)>=45?"D":"F";
+   p.votes=Math.round(p.popularity*900);addLog(`主題曲考核完成：重新評級為 ${p.grade} 級。${randomStory(p)}`);
+ }else if(type==="one"){
+   const map={fresh:"charm",power:"dance",vocal:"vocal",allround:"allround"};adjust(p,map[choiceKey]||"allround",5);adjust(p,"stage",2);p.energy-=22;p.popularity+=rand(4,9);
+   const teamWin=Math.random()<.52; if(teamWin){p.bonus+=4;p.voteBenefit=1000;p.popularity+=3;addLog("一公結果：你的隊伍獲勝，獲得模擬團隊加票獎勵！")}else addLog("一公結果：雖然隊伍未獲勝，你的舞台仍累積了觀眾印象。");
+   p.votes=Math.round(p.popularity*1000+score(p)*35);addLog(`一公舞台結束。${randomStory(p)}`);
+ }else if(type==="elim1"){
+   updateVotes();const r=rankedByVotes();const cut=r.slice(61);cut.forEach(t=>{t.alive=false;state.eliminated.push(t.id)});state.lastRank=r.findIndex(t=>t.player)+1;p.voteBenefit=0;
+   addLog(`第一次排名發布：${cut.length} 名練習生淘汰，前 61 名晉級。${p.alive?`你排名第 ${state.lastRank} 名。`:"你未能進入前 61 名。"}`);
+ }else if(type==="two"){
+   const map={vocal:"vocal",dance:"dance",rap:"rap",allround:"allround"};adjust(p,map[choiceKey]||"allround",6);adjust(p,"stage",3);p.energy-=22;p.popularity+=rand(5,10);p.votes=Math.round(p.popularity*1150+score(p)*45);
+   // position-specific individual advantage, represented as a modest simulation bonus
+   const chosen=map[choiceKey]||"allround";const posScore=chosen==="allround"?strength(p):(p.skills[chosen]||strength(p));
+   const bestInPosition=chosen!=="allround"&&posScore>=Math.max(...alive.map(t=>t.player?-1:(t.skills[chosen]||0)));
+   if(bestInPosition){p.bonus+=5;p.voteBenefit=100000;p.popularity+=3;addLog("二公位置評價：你成為該定位的模擬第一名，獲得 +100,000 票加成！")}
+   addLog(`二公位置評價完成，你選擇了「${({vocal:"主唱",dance:"主舞",rap:"饒舌",allround:"全能 Ace"})[choiceKey]||"全能"}」。${randomStory(p)}`);
+  }else if(type==="elim2"){
+   state.conceptSong=choiceKey;
+   updateVotes();const r=rankedByVotes();const cut=r.slice(35);cut.forEach(t=>{t.alive=false;state.eliminated.push(t.id)});state.lastRank=r.findIndex(t=>t.player)+1;p.voteBenefit=0;
+   addLog(`第二次排名發布：概念曲「${({"dream":"24 小時不打烊","crush":"閃耀本能","youth":"心動同頻","dark":"無重力夢境","sweet":"甜蜜暴擊"})[choiceKey]||"未選擇"}」已選定。${cut.length} 名練習生淘汰，前 35 名晉級。${p.alive?`你排名第 ${state.lastRank} 名。`:"你未能進入前 35 名。"}`);
+ }else if(type==="three"){
+   const map={dream:"charm",crush:"dance",youth:"stage",dark:"rap",sweet:"charm"};adjust(p,map[choiceKey]||"stage",6);adjust(p,"charm",2);p.energy-=24;p.popularity+=rand(6,12);p.votes=Math.round(p.popularity*1300+score(p)*50);
+   const conceptWin=Math.random()<0.20;if(conceptWin){p.voteBenefit=150000;addLog("概念評價結果：你的隊伍獲得原創概念曲團隊獎勵，第三次排名加計模擬 150,000 票！");}
+   addLog(`三公概念評價完成：「${({dream:"24 小時不打烊",crush:"閃耀本能",youth:"心動同頻",dark:"無重力夢境",sweet:"甜蜜暴擊"})[choiceKey]||"概念舞台"}」概念獲得觀眾關注。${randomStory(p)}`);
+ }else if(type==="elim3"){
+   updateVotes();const r=rankedByVotes();const cut=r.slice(22);cut.forEach(t=>{t.alive=false;state.eliminated.push(t.id)});state.lastRank=r.findIndex(t=>t.player)+1;p.voteBenefit=0;
+   addLog(`第三次排名發布：${cut.length} 名練習生淘汰，前 22 名進入最終評價。${p.alive?`你排名第 ${state.lastRank} 名。`:"你未能進入前 22 名。"}`);
+ }else if(type==="debut"){
+   const pos=choiceKey.split("_")[1]||"sub";
+   const team=choiceKey.startsWith("teamB")?"B":"A";
+   if(pos==="vocal"){adjust(p,"vocal",6);adjust(p,"charm",2)}
+   else if(pos==="rap"){adjust(p,"rap",6);adjust(p,"stage",2)}
+   else {adjust(p,"stage",4);adjust(p,"dance",3)}
+   p.finalTeam=team;p.finalPosition=pos;
+   // Simulate the two 11-member teams; the player's chosen team is respected.
+   const others=state.trainees.filter(t=>t.alive&&!t.player);
+   const shuffled=[...others].sort(()=>Math.random()-.5);
+   shuffled.forEach((t,i)=>{t.finalTeam=i<10?team:(team==="A"?"B":"A");t.finalPosition=pick(["vocal","sub","rap"]);});
+   p.finalTeam=team;
+   p.energy=Math.max(0,p.energy-18);p.popularity+=rand(8,14);p.bonus+=3;p.votes=Math.round(p.popularity*1500+score(p)*60);updateVotes();
+   addLog(`最終出道評價結束：你加入 ${p.finalTeam} 隊，擔任${({vocal:"主唱",sub:"副唱",rap:"饒舌"})[pos]||"副唱"}。22 名練習生分為兩隊、每隊 11 人，最終排名即將揭曉。`);
+ }
+ p.energy=Math.max(0,Math.min(100,p.energy));p.popularity=Math.max(1,Math.min(100,p.popularity));
+}
+function updateVotes(){state.trainees.filter(t=>t.alive).forEach(t=>{t.votes=Math.max(0,Math.round(t.popularity*850+score(t)*42+rand(-500,900)+(t.voteBenefit||0)));});}
+function nextStage(type){
+ const stageIndex=state.stage;
+ const chosen=selected();
+ applyStageEffects(type,chosen);
+ const p=player();
+ state.history=state.history||[];
+ const currentRank=state.lastRank && ["elim1","elim2","elim3"].includes(type) ? state.lastRank : (((type==="debut"?rankedByVotes():ranked()).findIndex(t=>t.player)+1) || null);
+ const previous=state.history.length?state.history[state.history.length-1]:null;
+ state.history.push({
+   stageIndex, phase:phases[stageIndex].name, choice:chosen, choiceLabel:choiceLabel(chosen),
+   rank:currentRank, rankChange:previous&&previous.rank&&currentRank?currentRank-previous.rank:null,
+   votes:p.votes||0, popularity:Math.round(p.popularity), energy:p.energy, grade:p.grade,
+   skills:{...p.skills}, alive:p.alive, timestamp:new Date().toISOString()
+ });
+ state.completed.push(state.stage);
+ if(state.stage===9){return}
+ state.stage++;
+ if(state.stage===9){
+   state.trainees.filter(t=>t.alive).forEach(t=>t.votes=Math.round(t.popularity*1500+score(t)*60+rand(0,1000)));
+   addLog("最終投票截止，出道名單已鎖定。");
+   const finalRank=rankedByVotes().findIndex(t=>t.player)+1;
+   const previous=state.history.length?state.history[state.history.length-1]:null;
+   state.history.push({stageIndex:9,phase:phases[9].name,choice:"final",choiceLabel:"最終投票與出道公布",rank:finalRank||null,rankChange:previous&&previous.rank&&finalRank?finalRank-previous.rank:null,votes:player().votes||0,popularity:Math.round(player().popularity),energy:player().energy,grade:player().grade,skills:{...player().skills},alive:player().alive,timestamp:new Date().toISOString()});
+ }
+ state.selection=null;save();render();
+}
+window.performStage=(type)=>{
+ if(!state)return;const p=player();if(!p.alive){flash("本次選秀已結束");return}
+ const need={initial:0,theme:1,one:2,elim1:3,two:4,elim2:5,three:6,elim3:7,debut:8}[type];
+ if(state.stage!==need){flash("請依照節目流程進行");return}
+ if(state.stage<9&&!(state.storyChoices&&state.storyChoices[state.stage])){flash("先完成本階段的劇情選擇，讓故事繼續發展");return}
+ if(["initial","theme","one","two","three","debut"].includes(type)&&!state.selection){state.selection=type==="three"?(state.conceptSong||"dream"):"balanced"}
+ if(type==="elim2"&&!state.selection){flash("請先選擇概念曲");return}
+ nextStage(type);
+ if(type.startsWith("elim")&&!p.alive){render();return}
+};
+window.restartGame=()=>{closeModal();$("startBanner").style.display="block";$("game").style.display="none";localStorage.removeItem("produce101girl_v1");state=null;flash("請建立新的練習生")};
+$("moreRankBtn").onclick=()=>{fullRanks=!fullRanks;renderRanks()};
+const originalRenderAction=renderAction;
+function patchedRenderAction(){originalRenderAction();}
+// Load saved data if valid
+try{const raw=localStorage.getItem("produce101girl_v1");if(raw){const loaded=JSON.parse(raw);if(loaded&&loaded.version===2&&Array.isArray(loaded.trainees)&&loaded.trainees.length===101){state=loaded;state.history=state.history||[];ensureSocialState();render()}}}catch(e){console.warn("save load failed",e)}
+})();
+</script>
+</body>
+</html>
